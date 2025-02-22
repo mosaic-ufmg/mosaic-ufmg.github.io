@@ -23,7 +23,6 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   site: 'https://lucas-rezende.github.io',
-  base: '/MOSAIC',
   output: 'static',
 
   integrations: [
