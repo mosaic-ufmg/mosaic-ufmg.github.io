@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config'
 
 export default defineConfig({
-  site: 'https://Lucas-Rezende.github.io',
+  site: 'https://Lucas-Rezende.github.io/MOSAIC/',
+  base: '/MOSAIC/',
 })
