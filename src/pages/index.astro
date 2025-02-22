@@ -14,28 +14,27 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Projetos em andamento',
-        href: '#blog',
-        target: '_blank',
-      },
-      { text: 'Sobre', href: 'about' },
-    ]}
-    image={{ src: '~/assets/images/mosaic_v2.png', alt: 'Mosaic' }}
-  >
-    <Fragment slot="title">
-      MOSAIC
-      </Fragment>
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Projetos em andamento',
+      href: '#blog',
+      target: '_blank',
+    },
+    { text: 'Sobre', href: 'about' },
+  ]}
+  image={{ src: '~/assets/images/mosaic_v2.png', alt: 'Mosaic' }}
+>
+  <span slot="title">MOSAIC</span>
 
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">Music-Oriented Systems and Artificial Intelligence for Creativity (MOSAIC) é um grupo de pesquisa interdisciplinar do Departamento de Ciência da Computação da Universidade Federal de Minas Gerais (DCC/UFMG) e da Escola de Música da UFMG.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-    </Fragment>
-  </Hero>
+  <span slot="subtitle">
+    <span class="hidden sm:inline">
+      <span class="font-semibold">
+        Music-Oriented Systems and Artificial Intelligence for Creativity (MOSAIC) é um grupo de pesquisa interdisciplinar do Departamento de Ciência da Computação da Universidade Federal de Minas Gerais (DCC/UFMG) e da Escola de Música da UFMG.
+      </span>
+    </span>
+  </span>
+</Hero>
 
   <!-- HighlightedPosts Widget ******* -->
 
