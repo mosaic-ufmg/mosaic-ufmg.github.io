@@ -22,8 +22,8 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  site: 'https://lucas-rezende.github.io',
-  base: '/MOSAIC'
+  site: 'https://MOSAIC.github.io',
+  base: '/MOSAIC',
   output: 'static',
 
   integrations: [
