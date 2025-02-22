@@ -19,15 +19,21 @@ const teamMembers = [
     <HeroText title="Equipe" />
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {teamMembers.map((member) => (
-        <div class="team-card flex items-center bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 gap-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-          <img src={member.image} alt={member.name} class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover transition-all duration-300 hover:scale-110" />
-          <div>
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-white">{member.name}</h2>
-            <p class="text-gray-600 dark:text-gray-300">{member.role}</p>
+      {
+        teamMembers.map((member) => (
+          <div class="team-card flex items-center bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 gap-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+            <img
+              src={member.image}
+              alt={member.name}
+              class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover transition-all duration-300 hover:scale-110"
+            />
+            <div>
+              <h2 class="text-xl font-semibold text-gray-900 dark:text-white">{member.name}</h2>
+              <p class="text-gray-600 dark:text-gray-300">{member.role}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </section>
 </Layout>

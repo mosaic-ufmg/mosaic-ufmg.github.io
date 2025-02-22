@@ -26,7 +26,9 @@ const { theme = 'light' } = Astro.props;
 
 <footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 dark:border-slate-800 not-prose']}>
   <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div>
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300 intersect-once intersect-quarter intercept-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+  <div
+    class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300 intersect-once intersect-quarter intercept-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+  >
     <div class="flex flex-col md:flex-row md:items-center md:justify-between py-6 md:py-8 gap-4">
       <!-- Social Links -->
       <ul class="flex space-x-4">
@@ -38,15 +40,12 @@ const { theme = 'light' } = Astro.props;
       </ul>
 
       <!-- Copyright -->
-      <div class="text-sm text-gray-600 dark:text-muted">
-        © 2024 MOSAIC. Todos os direitos reservados.
-      </div>
+      <div class="text-sm text-gray-600 dark:text-muted">© 2024 MOSAIC. Todos os direitos reservados.</div>
 
       <!-- Logo -->
       <div class="flex items-center gap-3">
-        <img src="/images/logos_footer.png" alt="" class="h-10 w-auto dark:brightness-90">
+        <img src="/images/logos_footer.png" alt="" class="h-10 w-auto dark:brightness-90" />
       </div>
-
     </div>
   </div>
 </footer>
