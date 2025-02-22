@@ -1,0 +1,105 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'About us',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Sobre"
+    image={{
+      src: '~/assets/images/ufmg_ps.jpg',
+      alt: 'Caos Image',
+    }}
+  >
+    <Fragment slot="title">
+      Saiba mais sobre o
+      <span class="text-accent dark:text-white highlight"> MOSAIC</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Music-Oriented Systems and Artificial Intelligence for Creativity
+    </Fragment>
+  </Hero>
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Tópicos de pesquisa"
+    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
+    columns={3}
+    isBeforeContent={true}
+    items={[
+      {
+        title: 'Music',
+        description:
+          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
+        icon: 'tabler:music',
+      },
+      {
+        title: 'Artificial Intelligence',
+        description:
+          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
+        icon: 'tabler:ai',
+      },
+      {
+        title: 'Photography',
+        description:
+          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
+        icon: 'tabler:template',
+      },
+    ]}
+  />
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Objetivos"
+    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
+    items={[
+      {
+        title: 'Análise de padrões musicais',
+        description:
+          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
+      },
+      {
+        title: 'Ferramentas para educação musical',
+        description:
+          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
+      },
+      {
+        title: 'Pesquisa interdisciplinar',
+        description:
+          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Localização"
+    tagline="Onde nos encontrar"
+    columns={2}
+    items={[
+      {
+        title: 'DCC/UFMG',
+        description: 'Avenida Antônio Carlos, Belo Horizonte, Minas Gerais',
+      },
+      {
+        title: 'Escola de Música da UFMG',
+        description: 'Avenida Antônio Carlos, Belo Horizonte, Minas Gerais',
+      },
+    ]}
+  />
+
+</Layout>
