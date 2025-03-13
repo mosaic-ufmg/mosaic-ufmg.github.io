@@ -195,6 +195,14 @@ apps:
     isEnabled: true # If the blog will be enabled
     postsPerPage: 6 # Number of posts per page
 
+  news:
+    isEnabled: true # If the blog will be enabled
+    postsPerPage: 6 # Number of posts per page
+
+  blogaux:
+    isEnabled: true # If the blog will be enabled
+    postsPerPage: 6 # Number of posts per page
+
     post:
       isEnabled: true
       permalink: '/blog/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%

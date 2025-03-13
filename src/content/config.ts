@@ -65,6 +65,46 @@ const postCollection = defineCollection({
   }),
 });
 
+const newsCollection = defineCollection({
+  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/news' }),
+  schema: z.object({
+    publishDate: z.date().optional(),
+    updateDate: z.date().optional(),
+    draft: z.boolean().optional(),
+
+    title: z.string(),
+    excerpt: z.string().optional(),
+    image: z.string().optional(),
+
+    category: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    author: z.string().optional(),
+
+    metadata: metadataDefinition(),
+  }),
+});
+
+const blogCollection = defineCollection({
+  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/blog2' }),
+  schema: z.object({
+    publishDate: z.date().optional(),
+    updateDate: z.date().optional(),
+    draft: z.boolean().optional(),
+
+    title: z.string(),
+    excerpt: z.string().optional(),
+    image: z.string().optional(),
+
+    category: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    author: z.string().optional(),
+
+    metadata: metadataDefinition(),
+  }),
+});
+
 export const collections = {
   post: postCollection,
+  news: newsCollection,
+  blog2: blogCollection,
 };

@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getBlogPermalink, getNewsPermalink, getAsset} from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -111,6 +111,31 @@ export const headerData = {
       ],
     },
     {
+      text: 'News',
+      links: [
+        {
+          text: 'News List',
+          href: getNewsPermalink(),
+        },
+        {
+          text: 'Article',
+          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
+        },
+        {
+          text: 'Article (with MDX)',
+          href: getPermalink('markdown-elements-demo-post', 'post'),
+        },
+        {
+          text: 'Category Page',
+          href: getPermalink('tutorials', 'category'),
+        },
+        {
+          text: 'Tag Page',
+          href: getPermalink('astro', 'tag'),
+        },
+      ],
+    },
+    {
       text: 'Widgets',
       href: '#',
     },
@@ -157,6 +182,8 @@ export const footerData = {
       links: [
         { text: 'About', href: '#' },
         { text: 'Blog', href: '#' },
+        { text: 'News', href: '#'},
+        { text: 'Blog2', href: '#'},
         { text: 'Careers', href: '#' },
         { text: 'Press', href: '#' },
         { text: 'Inclusion', href: '#' },
