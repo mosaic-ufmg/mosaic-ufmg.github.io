@@ -2,7 +2,6 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 const metadata = {
   title: 'MOSAIC',
@@ -18,10 +17,10 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Projetos em andamento',
-        href: '#blog',
+        href: 'projetos',
         target: '_blank',
       },
-      { text: 'Sobre', href: 'about' },
+      { text: 'Sobre', href: 'about', target: '_blank',},
     ]}
     image={{ src: '~/assets/images/mosaic_v2.png', alt: 'Mosaic' }}
   >
@@ -38,12 +37,4 @@ const metadata = {
     </span>
   </Hero>
 
-  <!-- HighlightedPosts Widget ******* -->
-
-  <BlogLatestPosts
-    id="blog"
-    title="Conheça alguns dos nossos projetos"
-    information={`Projetos em progresso.
-                `}
-  />
 </Layout>

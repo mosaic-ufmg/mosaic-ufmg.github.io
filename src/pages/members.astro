@@ -1,6 +1,5 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
 
 const metadata = {
   title: 'Equipe',
@@ -15,13 +14,21 @@ const teamMembers = [
 ---
 
 <Layout metadata={metadata}>
-  <section class="container mx-auto py-10 px-6">
-    <HeroText title="Equipe" />
+  <section class="relative text-center pb-5 md:pb-5 max-w-5xl mx-auto pt-20">
+    <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 
+               intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+      Membros
+    </h1>
 
+  </section>
+
+  <section class="container mx-auto py-10 px-6">    
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {
         teamMembers.map((member) => (
-          <div class="team-card flex items-center bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 gap-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+          <div class="team-card flex items-center bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 gap-6 
+                      transition-transform duration-300 hover:scale-105 hover:shadow-2xl 
+                      intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
             <img
               src={member.image}
               alt={member.name}

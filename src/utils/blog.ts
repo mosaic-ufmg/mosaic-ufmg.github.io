@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import type { Post } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
+import { categoryData } from '~/utils/categories';
 
 const generatePermalink = async ({
   id,
@@ -40,6 +41,12 @@ const generatePermalink = async ({
     .join('/');
 };
 
+const categorySubtitles: Record<string, string> = {
+  Projetos: "As últimas tendências e inovações do mundo tech.",
+  News: "Dicas e estratégias para empreendedores e empresas.",
+  Blog: "Informações.",
+};
+
 const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> => {
   const { id, data } = post;
   const { Content, remarkPluginFrontmatter } = await render(post);
@@ -65,6 +72,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     ? {
         slug: cleanSlug(rawCategory),
         title: rawCategory,
+        subtitle: categorySubtitles[rawCategory] || "Explore conteúdos incríveis!",
       }
     : undefined;
 
@@ -209,7 +217,7 @@ export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: Pagin
     paginate(
       posts.filter((post) => post.category?.slug && categorySlug === post.category?.slug),
       {
-        params: { category: categorySlug, blog: CATEGORY_BASE || undefined },
+        params: { category: categorySlug },
         pageSize: blogPostsPerPage,
         props: { category: categories[categorySlug] },
       }

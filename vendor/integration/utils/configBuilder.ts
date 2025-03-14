@@ -8,8 +8,6 @@ export type Config = {
   i18n?: I18NConfig;
   apps?: {
     blog?: AppBlogConfig;
-    news?: AppNewsConfig;
-    blogaux?: AppBlogAuxConfig;
   };
   ui?: unknown;
   analytics?: unknown;
@@ -34,82 +32,6 @@ export interface I18NConfig {
   dateFormatter?: Intl.DateTimeFormat;
 }
 export interface AppBlogConfig {
-  isEnabled: boolean;
-  postsPerPage: number;
-  isRelatedPostsEnabled: boolean;
-  relatedPostsCount: number;
-  post: {
-    isEnabled: boolean;
-    permalink: string;
-    robots: {
-      index: boolean;
-      follow: boolean;
-    };
-  };
-  list: {
-    isEnabled: boolean;
-    pathname: string;
-    robots: {
-      index: boolean;
-      follow: boolean;
-    };
-  };
-  category: {
-    isEnabled: boolean;
-    pathname: string;
-    robots: {
-      index: boolean;
-      follow: boolean;
-    };
-  };
-  tag: {
-    isEnabled: boolean;
-    pathname: string;
-    robots: {
-      index: boolean;
-      follow: boolean;
-    };
-  };
-}
-export interface AppNewsConfig {
-  isEnabled: boolean;
-  postsPerPage: number;
-  isRelatedPostsEnabled: boolean;
-  relatedPostsCount: number;
-  post: {
-    isEnabled: boolean;
-    permalink: string;
-    robots: {
-      index: boolean;
-      follow: boolean;
-    };
-  };
-  list: {
-    isEnabled: boolean;
-    pathname: string;
-    robots: {
-      index: boolean;
-      follow: boolean;
-    };
-  };
-  category: {
-    isEnabled: boolean;
-    pathname: string;
-    robots: {
-      index: boolean;
-      follow: boolean;
-    };
-  };
-  tag: {
-    isEnabled: boolean;
-    pathname: string;
-    robots: {
-      index: boolean;
-      follow: boolean;
-    };
-  };
-}
-export interface AppBlogAuxConfig {
   isEnabled: boolean;
   postsPerPage: number;
   isRelatedPostsEnabled: boolean;
@@ -249,90 +171,7 @@ const getAppBlog = (config: Config) => {
 
   return merge({}, _default, config?.apps?.blog ?? {}) as AppBlogConfig;
 };
-const getAppNews = (config: Config) => {
-  const _default = {
-    isEnabled: false,
-    postsPerPage: 6,
-    isRelatedPostsEnabled: false,
-    relatedPostsCount: 4,
-    post: {
-      isEnabled: true,
-      permalink: '/news/%slug%',
-      robots: {
-        index: true,
-        follow: true,
-      },
-    },
-    list: {
-      isEnabled: true,
-      pathname: 'news',
-      robots: {
-        index: true,
-        follow: true,
-      },
-    },
-    category: {
-      isEnabled: true,
-      pathname: 'category',
-      robots: {
-        index: true,
-        follow: true,
-      },
-    },
-    tag: {
-      isEnabled: true,
-      pathname: 'tag',
-      robots: {
-        index: false,
-        follow: true,
-      },
-    },
-  };
 
-  return merge({}, _default, config?.apps?.news ?? {}) as AppNewsConfig;
-};
-const getAppBlogAux = (config: Config) => {
-  const _default = {
-    isEnabled: false,
-    postsPerPage: 6,
-    isRelatedPostsEnabled: false,
-    relatedPostsCount: 4,
-    post: {
-      isEnabled: true,
-      permalink: '/blogaux/%slug%',
-      robots: {
-        index: true,
-        follow: true,
-      },
-    },
-    list: {
-      isEnabled: true,
-      pathname: 'blogaux',
-      robots: {
-        index: true,
-        follow: true,
-      },
-    },
-    category: {
-      isEnabled: true,
-      pathname: 'category',
-      robots: {
-        index: true,
-        follow: true,
-      },
-    },
-    tag: {
-      isEnabled: true,
-      pathname: 'tag',
-      robots: {
-        index: false,
-        follow: true,
-      },
-    },
-  };
-
-  return merge({}, _default, config?.apps?.news ?? {}) as AppNewsConfig;
-};
 const getUI = (config: Config) => {
   const _default = {
     theme: 'system',
@@ -359,8 +198,6 @@ export default (config: Config) => ({
   I18N: getI18N(config),
   METADATA: getMetadata(config),
   APP_BLOG: getAppBlog(config),
-  APP_BLOG_AUX: getAppBlogAux(config),
-  APP_NEWS: getAppNews(config),
   UI: getUI(config),
   ANALYTICS: getAnalytics(config),
 });
