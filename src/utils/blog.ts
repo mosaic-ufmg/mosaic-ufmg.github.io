@@ -42,9 +42,9 @@ const generatePermalink = async ({
 };
 
 const categorySubtitles: Record<string, string> = {
-  Projetos: "As últimas tendências e inovações do mundo tech.",
-  News: "Dicas e estratégias para empreendedores e empresas.",
-  Blog: "Informações.",
+  Projetos: "Saiba mais sobre os projetos desenvolvidos.",
+  News: "Notícias sobre tópicos de interesse",
+  Blog: "Posts técnicos na interseção IA/Música.",
 };
 
 const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> => {
@@ -72,7 +72,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     ? {
         slug: cleanSlug(rawCategory),
         title: rawCategory,
-        subtitle: categorySubtitles[rawCategory] || "Explore conteúdos incríveis!",
+        subtitle: categorySubtitles[rawCategory] || "",
       }
     : undefined;
 
