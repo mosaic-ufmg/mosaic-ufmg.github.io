@@ -3,9 +3,17 @@ import type { Form as Props } from '~/types';
 import Button from '~/components/ui/Button.astro';
 
 const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
+
+// Substitua com o seu URL do Google Forms
+const googleFormUrl = "https://docs.google.com/forms/d/e/SEU_FORM_ID/formResponse";
 ---
 
-<form>
+<form action={googleFormUrl} method="POST" target="_blank">
+  <!-- Campos ocultos para Google Forms -->
+  <input type="hidden" name="entry.52137006" value="">
+  <input type="hidden" name="entry.110619679" value="">
+  <input type="hidden" name="entry.891292626" value="">
+
   {
     inputs &&
       inputs.map(
@@ -24,6 +32,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
                 autocomplete={autocomplete}
                 placeholder={placeholder}
                 class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+                required
               />
             </div>
           )
@@ -38,10 +47,11 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
         </label>
         <textarea
           id="textarea"
-          name={textarea.name ? textarea.name : 'message'}
+          name="entry.891292626" 
           rows={textarea.rows ? textarea.rows : 4}
           placeholder={textarea.placeholder}
           class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+          required
         />
       </div>
     )
