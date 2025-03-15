@@ -4,8 +4,7 @@ import Button from '~/components/ui/Button.astro';
 
 const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
 
-// Substitua com o seu URL do Google Forms
-const googleFormUrl = "https://docs.google.com/forms/d/e/SEU_FORM_ID/formResponse";
+const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSd-TR-RB3eN3wXApe63PYSxelFYdxOEtTVcJjbuI4dXGngceg/formResponse";
 ---
 
 <form action={googleFormUrl} method="POST" target="_blank">
