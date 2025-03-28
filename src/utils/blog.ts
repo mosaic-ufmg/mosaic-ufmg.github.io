@@ -3,8 +3,8 @@ import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { Post } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
-import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
-import { categoryData } from '~/utils/categories';
+import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, TAG_BASE } from './permalinks';
+import type { Taxonomy } from '../../src/types';
 
 const generatePermalink = async ({
   id,
@@ -174,12 +174,24 @@ export const findPostsByIds = async (ids: Array<string>): Promise<Array<Post>> =
 };
 
 /** */
-export const findLatestPosts = async ({ count }: { count?: number }): Promise<Array<Post>> => {
+export const findLatestPosts = async ({
+  count,
+  category,
+}: {
+  count?: number;
+  category?: Taxonomy; // Tipo ajustado
+}): Promise<Array<Post>> => {
   const _count = count || 4;
   const posts = await fetchPosts();
 
-  return posts ? posts.slice(0, _count) : [];
+  // ADD: FILTRO POR CATEGORIA
+  const filteredPosts = category
+    ? posts.filter(post => post.category?.slug === category.slug)
+    : posts;
+
+  return filteredPosts ? filteredPosts.slice(0, _count) : [];
 };
+
 
 /** */
 export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {

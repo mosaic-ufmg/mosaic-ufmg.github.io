@@ -3,6 +3,8 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+
 const metadata = {
   title: 'MOSAIC',
   ignoreTitleTemplate: true,
@@ -36,5 +38,9 @@ const metadata = {
       </span>
     </span>
   </Hero>
-
+  <BlogLatestPosts
+    title="News"
+    information={` Notícias sobre tópicos de interesse
+                `}
+  />
 </Layout>

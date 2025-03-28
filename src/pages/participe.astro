@@ -1,0 +1,35 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+
+const metadata = {
+  title: 'Participe',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <ContactUs
+    id="form"
+    title="Participe!"
+    subtitle="  Se você possui interesse em algum dos tópicos de pesquisa ou deseja fazer uma parceria, fale conosco através do formulário abaixo."
+    inputs={[
+      {
+        type: 'text',
+        name: 'entry.52137006',
+        label: 'Nome',
+      },
+      {
+        type: 'email',
+        name: 'entry.110619679',
+        label: 'Email',
+      },
+    ]}
+    textarea={{
+      label: 'Mensagem',
+      name: 'entry.891292626',
+    }}
+  />
+
+</Layout>
