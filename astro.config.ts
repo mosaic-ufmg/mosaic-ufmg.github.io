@@ -23,6 +23,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   site: 'https://mosaic-ufmg.github.io',
+  base: '/mosaic-ufmg/',
   output: 'static',
 
   integrations: [
