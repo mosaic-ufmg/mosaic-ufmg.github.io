@@ -4,8 +4,6 @@ author: Lucas Rezende
 title: 'Long-Form Text-To-Music Generation With Adaptive Prompts: A Case Study In Tabletop Role-Playing Games Soundtracks'
 excerpt: Felipe Ferreira Marra e Lucas N. Ferreira
 category: Publicações
-tags:
-  - publicacoes
 metadata:
   canonical: https://astrowind.vercel.app/get-started-website-with-astro-tailwind-css
 ---

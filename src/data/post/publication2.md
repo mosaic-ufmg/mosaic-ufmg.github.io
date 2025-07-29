@@ -4,8 +4,6 @@ author: Lucas Rezende
 title: Surprising Patterns in Musical Influence Networks
 excerpt: Flavio Figueiredo, Tales Panoutsos, Nazareno Andrade
 category: Publicações
-tags:
-  - publicacoes
 metadata:
   canonical: https://astrowind.vercel.app/get-started-website-with-astro-tailwind-css
 ---
