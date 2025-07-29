@@ -6,25 +6,25 @@ const metadata = {
 };
 
 const professors = [
-  { name: 'Flavio Vinicius Diniz de Figueiredo', role: 'Professor Adjunto do Departamento de Ciência da Computação', image: '/images/members/flavio.png' },
-  { name: 'Lucas N. Ferreira', role: 'Professor Adjunto do Departamento de Ciência da Computação', image: '/images/members/lucas.png' },
-  { name: 'Frederico Gonçalves Pedrosa', role: 'Professor Adjunto da Escola de Música', image: '/images/members/fred.png' },
-  { name: 'José Henrique Padovani Velloso', role: 'Professor Adjunto da Escola de Música', image: '/images/members/padovani.png' },
-  { name: 'Alexei Manso Correa Machado', role: 'Professor Adjunto da Faculdade de Medicina', image: '/images/members/alexei.png' }
+  { name: 'Flavio Vinicius Diniz de Figueiredo', role: 'Professor Adjunto do Departamento de Ciência da Computação', image: '/images/members/professors/flavio_figueiredo.png', site: 'https://flaviovdf.io/' },
+  { name: 'Lucas N. Ferreira', role: 'Professor Adjunto do Departamento de Ciência da Computação', image: '/images/members/professors/lucas_ferreira.png', site: 'https://www.lucasnferreira.com/'},
+  { name: 'Frederico Gonçalves Pedrosa', role: 'Professor Adjunto da Escola de Música', image: '/images/members/professors/fred_goncalves.png', site: 'https://www.linkedin.com/in/frederico-pedrosa-77997245/' },
+  { name: 'José Henrique Padovani Velloso', role: 'Professor Adjunto da Escola de Música', image: '/images/members/professors/jose_padovani.png', site: 'https://josehenriquepadovani.com/' },
+  { name: 'Alexei Manso Correa Machado', role: 'Professor Adjunto da Faculdade de Medicina', image: '/images/members/professors/alexei_machado.png', site: 'https://www.linkedin.com/in/alexei-machado-575730aa/' }
 ];
 
 const phd_students = [
-  { name: 'Ivan Moriá Borges Rodrigues', role: 'Doutorando em Música', image: '/images/members/ivan.png' }
+  { name: 'Ivan Moriá Borges Rodrigues', role: 'Doutorando em Música', image: '/images/members/phd_students/ivan_moria.png', site: 'https://ivanmoria.github.io/' }
 ]
 
 const msc_students = [
-  { name: 'Felipe Ferreira Marra', role: 'Mestrando em Ciência da Computação', image: '/images/members/default.png' },
-  { name: 'Fernando Tonucci', role: 'Mestrando em Ciência da Computação', image: '/images/members/default.png' },
-  { name: 'Giovanni Martinelli', role: 'Mestrando em Ciência da Computação', image: '/images/members/default.png' },
-  { name: 'Larissa D. Gomide', role: 'Mestranda em Ciência da Computação', image: '/images/members/default.png' },
-  { name: 'Manoela Werneck ', role: 'Mestranda em Ciência da Computação', image: '/images/members/default.png' },
-  { name: 'Pedro Henrique', role: 'Mestrando em Ciência da Computação', image: '/images/members/default.png' },
-  { name: 'Thiago Martin Poppe', role: 'Mestrando em Ciência da Computação', image: '/images/members/default.png' }
+  { name: 'Felipe Ferreira Marra', role: 'Mestrando em Ciência da Computação', image: '/images/members/msc_students/felipe_ferreira_marra.webp', site: 'https://www.felipemarra.com/'},
+  { name: 'Fernando Tonucci', role: 'Mestrando em Ciência da Computação', image: '/images/members/msc_students/fernando_tonucci.jpeg', site: 'https://www.linkedin.com/in/fernando-tonucci-386184213/'},
+  { name: 'Giovanni Martinelli', role: 'Mestrando em Ciência da Computação', image: '/images/members/msc_students/giovanni_martinelli.jpeg', site: 'https://www.linkedin.com/in/giovanni-f-martinelli/' },
+  { name: 'Larissa D. Gomide', role: 'Mestranda em Ciência da Computação', image: '/images/members/msc_students/larissa_d_gomide.jpeg', site: 'https://www.linkedin.com/in/larissa-dolabella-a112bb181/' },
+  { name: 'Manoela Werneck ', role: 'Mestranda em Ciência da Computação', image: '/images/members/msc_students/manoela_werneck.jpeg', site: 'https://www.linkedin.com/in/manoela-werneck/' },
+  { name: 'Pedro Rodrigues', role: 'Mestrando em Ciência da Computação', image: '/images/members/msc_students/pedro_rodrigues.jpeg', site: 'https://www.linkedin.com/in/pedro-henrique-mendes-rodrigues-aa4196193/'},
+  { name: 'Thiago Martin Poppe', role: 'Mestrando em Ciência da Computação', image: '/images/members/msc_students/thiago_martin_poppe.jpeg', site: 'https://www.linkedin.com/in/thiago-martin-poppe-79516b1a1/'}
 ]
 
 ---
@@ -46,19 +46,21 @@ const msc_students = [
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {
         professors.map((member) => (
-          <div class="team-card flex items-center bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 gap-6 
-                      transition-transform duration-300 hover:scale-105 hover:shadow-2xl 
-                      intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-            <img
-              src={member.image}
-              alt={member.name}
-              class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover transition-all duration-300 hover:scale-110"
-            />
-            <div>
-              <h2 class="text-xl font-semibold text-gray-900 dark:text-white">{member.name}</h2>
-              <p class="text-gray-600 dark:text-gray-300">{member.role}</p>
+          <a href={member.site} target="_blank">
+            <div class="team-card flex items-center bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 gap-6 
+                        transition-transform duration-300 hover:scale-105 hover:shadow-2xl 
+                        intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+              <img
+                src={member.image}
+                alt={member.name}
+                class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover transition-all duration-300 hover:scale-110"
+              />
+              <div>
+                <h2 class="text-xl font-semibold text-gray-900 dark:text-white">{member.name}</h2>
+                <p class="text-gray-600 dark:text-gray-300">{member.role}</p>
+              </div>
             </div>
-          </div>
+          </a>
         ))
       }
     </div>
@@ -72,19 +74,21 @@ const msc_students = [
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {
         phd_students.map((member) => (
-          <div class="team-card flex items-center bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 gap-6 
-                      transition-transform duration-300 hover:scale-105 hover:shadow-2xl 
-                      intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-            <img
-              src={member.image}
-              alt={member.name}
-              class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover transition-all duration-300 hover:scale-110"
-            />
-            <div>
-              <h2 class="text-xl font-semibold text-gray-900 dark:text-white">{member.name}</h2>
-              <p class="text-gray-600 dark:text-gray-300">{member.role}</p>
+          <a href={member.site} target="_blank">
+            <div class="team-card flex items-center bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 gap-6 
+                        transition-transform duration-300 hover:scale-105 hover:shadow-2xl 
+                        intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover transition-all duration-300 hover:scale-110"
+                />
+              <div>
+                <h2 class="text-xl font-semibold text-gray-900 dark:text-white">{member.name}</h2>
+                <p class="text-gray-600 dark:text-gray-300">{member.role}</p>
+              </div>
             </div>
-          </div>
+          </a>
         ))
       }
     </div>
@@ -98,19 +102,21 @@ const msc_students = [
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {
         msc_students.map((member) => (
-          <div class="team-card flex items-center bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 gap-6 
-                      transition-transform duration-300 hover:scale-105 hover:shadow-2xl 
-                      intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-            <img
-              src={member.image}
-              alt={member.name}
-              class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover transition-all duration-300 hover:scale-110"
-            />
-            <div>
-              <h2 class="text-xl font-semibold text-gray-900 dark:text-white">{member.name}</h2>
-              <p class="text-gray-600 dark:text-gray-300">{member.role}</p>
+          <a href={member.site} target="_blank">
+            <div class="team-card flex items-center bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 gap-6 
+                        transition-transform duration-300 hover:scale-105 hover:shadow-2xl 
+                        intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+              <img
+                src={member.image}
+                alt={member.name}
+                class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover transition-all duration-300 hover:scale-110"
+              />
+              <div>
+                <h2 class="text-xl font-semibold text-gray-900 dark:text-white">{member.name}</h2>
+                <p class="text-gray-600 dark:text-gray-300">{member.role}</p>
+              </div>
             </div>
-          </div>
+          </a>
         ))
       }
     </div>
