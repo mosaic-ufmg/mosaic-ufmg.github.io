@@ -8,32 +8,40 @@ const metadata = {
 const publications = [
   {
     title:
+      'Automatic Aesthetic Evaluation in Generative Image Models',
+    authors: 'Larissa D. Gomide, Lucas N. Ferreira, and Wagner Meira Jr.',
+    venue: 'International Conference on Computational Creativity (ICCC)',
+    year: '2025',
+    link: 'https://homepages.dcc.ufmg.br/~lferreira/assets/papers/2025/iccc-25.pdf',
+  },
+  {
+    title:
       'Long-Form Text-To-Music Generation With Adaptive Prompts: A Case Study In Tabletop Role-Playing Games Soundtracks',
     authors: 'Felipe Ferreira Marra, Lucas N. Ferreira',
-    venue: 'Arxiv',
-    year: '2025',
+    venue: 'Latin American Music Information Retrieval Workshop (LAMIR)',
+    year: '2024',
     link: 'https://arxiv.org/abs/2411.03948',
   },
   {
     title: 'Surprising Patterns in Musical Influence Networks',
     authors: 'Flavio Figueiredo, Tales Panoutsos, Nazareno Andrade',
-    venue: 'Arxiv',
-    year: '2025',
+    venue: 'Latin American Music Information Retrieval Workshop (LAMIR)',
+    year: '2024',
     link: 'https://arxiv.org/abs/2410.15996',
   },
   {
     title: 'Assessing the Impact of Sampling, Remixes, and Covers On Original Song Popularity',
     authors: 'Guilherme Soares S. dos Santos, Flavio Figueiredo',
-    venue: 'Arxiv',
-    year: '2025',
+    venue: 'Latin American Music Information Retrieval Workshop (LAMIR)',
+    year: '2024',
     link: 'https://arxiv.org/abs/2411.01242',
   },
   {
     title: 'I’ve Heard This Before: Initial Results on Tiktok’s Impact On the Re-Popularization of Songs',
     authors: 'Breno Matos, Rennan Cordeiro, Francisco Galuppo, Flavio Figueiredo',
-    venue: 'Arxiv',
-    year: '2025',
-    link: 'ttps://arxiv.org/abs/2411.01239',
+    venue: 'Latin American Music Information Retrieval Workshop (LAMIR)',
+    year: '2024',
+    link: 'https://arxiv.org/abs/2411.01239',
   },
 ];
 ---
@@ -61,7 +69,7 @@ const publications = [
             class="bg-gray-50 dark:bg-gray-800 rounded-xl p-2 transition-shadow duration-200 ease-in-out
                  intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
           >
-            <h2 class="text-base font-semibold text-gray-900 dark:text-white mb-1">{pub.title}</h2>
+            <a href={pub.link}><h2 class="text-base font-semibold text-gray-900 dark:text-white mb-1">{pub.title}</h2></a>
             <p class="text-sm text-gray-700 dark:text-gray-300 mb-1">{pub.authors}</p>
             <p class="text-sm text-gray-600 dark:text-gray-400 italic">
               {pub.venue}, {pub.year}
