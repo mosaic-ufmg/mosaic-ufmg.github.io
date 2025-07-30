@@ -1,0 +1,74 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Publicações',
+};
+
+const publications = [
+  {
+    title:
+      'Long-Form Text-To-Music Generation With Adaptive Prompts: A Case Study In Tabletop Role-Playing Games Soundtracks',
+    authors: 'Felipe Ferreira Marra, Lucas N. Ferreira',
+    venue: 'Arxiv',
+    year: '2025',
+    link: 'https://arxiv.org/abs/2411.03948',
+  },
+  {
+    title: 'Surprising Patterns in Musical Influence Networks',
+    authors: 'Flavio Figueiredo, Tales Panoutsos, Nazareno Andrade',
+    venue: 'Arxiv',
+    year: '2025',
+    link: 'https://arxiv.org/abs/2410.15996',
+  },
+  {
+    title: 'Assessing the Impact of Sampling, Remixes, and Covers On Original Song Popularity',
+    authors: 'Guilherme Soares S. dos Santos, Flavio Figueiredo',
+    venue: 'Arxiv',
+    year: '2025',
+    link: 'https://arxiv.org/abs/2411.01242',
+  },
+  {
+    title: 'I’ve Heard This Before: Initial Results on Tiktok’s Impact On the Re-Popularization of Songs',
+    authors: 'Breno Matos, Rennan Cordeiro, Francisco Galuppo, Flavio Figueiredo',
+    venue: 'Arxiv',
+    year: '2025',
+    link: 'ttps://arxiv.org/abs/2411.01239',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="relative text-center pb-5 max-w-5xl mx-auto pt-20">
+    <h1
+      class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200
+               intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+    >
+      Publicações
+    </h1>
+    <p
+      class="text-xl text-muted dark:text-slate-400 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+    >
+      Veja nossas publicações
+    </p>
+  </section>
+
+  <section class="container mx-auto py-10 px-6 max-w-4xl">
+    <div class="space-y-2">
+      {
+        publications.map((pub) => (
+          <div
+            class="bg-gray-50 dark:bg-gray-800 rounded-xl p-2 transition-shadow duration-200 ease-in-out
+                 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+          >
+            <h2 class="text-base font-semibold text-gray-900 dark:text-white mb-1">{pub.title}</h2>
+            <p class="text-sm text-gray-700 dark:text-gray-300 mb-1">{pub.authors}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 italic">
+              {pub.venue}, {pub.year}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
